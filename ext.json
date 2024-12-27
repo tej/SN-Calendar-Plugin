@@ -1,0 +1,9 @@
+{
+  "identifier": "com.jetd.calendarplugin",
+  "name": "Calendar Plugin",
+  "version": "1.0.0",
+  "description": "A calendar plugin for Standard Notes to create, update, and remove events.",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "url": "https://sn-calendar-plugin.surge.sh/index.html"
+}
