@@ -1,6 +1,4 @@
-Here’s a basic README.md for your Standard Notes Calendar Extension:
-
-Standard Notes Calendar Plugin
+## Standard Notes Calendar Plugin
 
 A calendar plugin for Standard Notes that enables you to manage events directly within the app. This plugin is built using React and FullCalendar, offering functionality similar to popular calendar apps like Outlook or Apple Calendar.
 
