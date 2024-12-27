@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+Here’s a basic README.md for your Standard Notes Calendar Extension:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Standard Notes Calendar Plugin
 
-Currently, two official plugins are available:
+A calendar plugin for Standard Notes that enables you to manage events directly within the app. This plugin is built using React and FullCalendar, offering functionality similar to popular calendar apps like Outlook or Apple Calendar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+	•	View events in month, week, or day format.
+	•	Add events by clicking on a date.
+	•	Edit events by clicking on an existing event.
+	•	Drag-and-drop events to reschedule them.
+	•	Fully integrated with Standard Notes.
+	•	Persistent storage using local storage (with potential to integrate with Standard Notes API).
 
-## Expanding the ESLint configuration
+Installation
+	1.	Clone this repository:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+git clone https://github.com/tej/standardnotes-calendar-plugin.git
+cd standardnotes-calendar-plugin
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+	2.	Install dependencies:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+	3.	Build the project:
+
+npm run build
+
+
+	4.	Serve the project locally:
+
+npx http-server dist -p 8001 --cors
+
+
+	5.	Create an ext.json file with the following content:
+
+{
+  "identifier": "com.username.calendar-plugin",
+  "name": "Calendar Plugin",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "1.0.0",
+  "url": "http://localhost:8001/index.html"
+}
+
+
+	6.	Open Standard Notes and go to Extensions → Import Extension.
+Paste the URL of your ext.json file (e.g., http://localhost:8001/ext.json) and click Install.
+	7.	Activate the extension and enjoy your calendar!
+
+Usage
+	•	Add an Event: Click on a date to create a new event.
+	•	Edit an Event: Click on an existing event to rename it.
+	•	Move an Event: Drag and drop an event to a new date/time.
+
+Development
+
+To start a development server with live reloading:
+
+npm run dev
+
+To watch for changes and rebuild the project:
+
+npm run watch
+
+Dependencies
+	•	React
+	•	FullCalendar
+	•	Vite
+
+Future Enhancements
+	•	Integration with external calendars (Google, Outlook, Apple).
+	•	Sync events using the Standard Notes API.
+	•	Add recurring events functionality.
+	•	Improve UI with customizable themes.
+
+License
+
+This project is licensed under the MIT License.
